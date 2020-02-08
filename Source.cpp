@@ -11,8 +11,8 @@ using namespace std;
 int main()
 {
 	//Display title
-	cout << "\t\t\t Word Jumble \n\n";
-	cout << "Find the key words. \n";
+	cout << "\t\t\t Mythology Jumble \n\n";
+	cout << " Unjumble the names of the Gods \n";
 
 	bool playAgain = false;
 	char userPlayAgainChoice;
@@ -22,23 +22,29 @@ int main()
 		// user rounds
 		for (int i = 0; i < 3; i++)
 		{
-			cout << "\n Round " << i + 1 << " of 5. \n\n";
+			cout << "\n Round " << i + 1 << " of 3. \n\n";
 
 			enum fields { WORD, HINT, NUM_FIELDS };
-			const int NUM_WORDS = 5;
+			const int NUM_WORDS = 10;
 			const string WORDS[NUM_WORDS][NUM_FIELDS] =
 			{
-				{"wall", "Do you feel you're banging you head against something?"},
-				{"glasses", "These might help you see the answer."},
-				{"labored","Going slowly, is it?"},
-				{"persistent","Keep at it"},
-				{"jumble","It's what the game is all about."}
+				{"Zeus"," King of Olympus "}, //1
+				{"Posiden"," King of the Seven Seas "}, //2 
+				{"Hades"," King of the Underworld "}, //3
+				{"Ares"," God of War "}, //4
+				{"Athena"," Goddess of Wisdom "}, //5
+				{"Hephaestus"," God of Blacksmiths "}, //6
+				{"Aphrodite"," Goddess of Love "}, //7
+				{"Dionysus"," God of Wine "}, //8
+				{"Artemis"," Goddess of Hunting "}, //9
+				{"Apollo"," God of Music "}, //10
 			};
+
 			srand(static_cast<unsigned int>(time(0)));
 			int choice = (rand() % NUM_WORDS);
 			string theWord = WORDS[choice][WORD];
 			string theHint = WORDS[choice][HINT];
-
+//----------------------------------------------------------------
 			string jumble = theWord;
 			int length = jumble.size();
 			for (int i = 0; i < length; ++i)
@@ -49,6 +55,7 @@ int main()
 				jumble[index1] = jumble[index2];
 				jumble[index2] = temp;
 			}
+
 			cout << "Enter 'hint' for a hint. \n";
 			cout << "Enter 'quit' to quit the game. \n\n";
 			cout << "The jumble is: " << jumble;
@@ -56,7 +63,7 @@ int main()
 			string guess;
 			cout << "\n\n Your guess: ";
 			cin >> guess;
-
+//----------------------------------------------------------------
 			while ((guess != theWord) && (guess != "quit"))
 			{
 				if (guess == "hint")
@@ -73,16 +80,16 @@ int main()
 
 			if (guess == theWord)
 			{
-				cout << " Input correct"
+				cout << " Input correct";
 			}
 		}
+//----------------------------------------------------------------
+		cout << "\n Go in knowledge of the Greek Gods \n";
 
+		cout << "\n Test your will again? (y/n) ";
+		cin >> userPlayAgainChoice;
 
-		cout << "\n You have completed 5 rounds and the game is over! \n";
-
-		cout << "\n Would you like to play again? (y/n) ";
-		cin >> usersPlayAgainChoice;
-		if (usersPlayAgainChoice == 'y')
+		if (userPlayAgainChoice == 'y')
 		{
 			playAgain = true;
 		}
@@ -90,11 +97,10 @@ int main()
 		{
 			playAgain = false;
 		}
-			
-	}
-	while (playAgain);
 
-	cout << "\n Thanks for playing. \n";
+	} while (playAgain);
+//----------------------------------------------------------------
+	cout << "\n Go forth in the name of Olympus \n";
 
 	return 0;
 }
