@@ -14,11 +14,6 @@ int main()
 	cout << "\t\t\t Mythology Jumble \n\n";
 	cout << " Unjumble the names of the Gods \n";
 
-	bool playAgain = false;
-	char userPlayAgainChoice;
-
-	do
-	{
 		// user rounds
 		for (int i = 0; i < 3; i++)
 		{
@@ -85,20 +80,6 @@ int main()
 		}
 //----------------------------------------------------------------
 		cout << "\n Go in knowledge of the Greek Gods \n";
-
-		cout << "\n Test your will again? (y/n) ";
-		cin >> userPlayAgainChoice;
-
-		if (userPlayAgainChoice == 'y')
-		{
-			playAgain = true;
-		}
-		else
-		{
-			playAgain = false;
-		}
-
-	} while (playAgain);
 //----------------------------------------------------------------
 	cout << "\n Go forth in the name of Olympus \n";
 
